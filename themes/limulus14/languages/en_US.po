@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: limulus\n"
+"POT-Creation-Date: 2014-05-12 11:12-0600\n"
+"PO-Revision-Date: 2014-05-12 11:12-0600\n"
+"Last-Translator: John <juan@losmaquiladores.com>\n"
+"Language-Team: Los Maquiladores <hola@losmaquiladores.com>\n"
+"Language: es_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../author.php:31
+msgid "[:es] "
+msgstr ""
+
+#: ../author.php:38
+#, fuzzy
+msgid "Artículos relacionados a este colaborador:"
+msgstr "Articles related to this contributor: "
+
+#: ../author.php:40
+msgid "Artículos relacionados a este colaborador: "
+msgstr "Articles related to this contributor: "
+
+#: ../category.php:64
+msgid "Los filtros seleccionados no obtuvieron ningún resultado"
+msgstr "No results for queried filters"
+
+#: ../category.php:65
+msgid "Ir al inicio"
+msgstr "Go to home"
+
+#: ../footer.php:11 ../sidebar-info.php:4
+msgid "Aviso de privacidad"
+msgstr "Privacy notice"
+
+#: ../footer.php:12 ../sidebar-info.php:5
+msgid "Información sobre derechos de autor"
+msgstr "Copyright information"
+
+#: ../functions.php:236
+#, php-format
+msgid "Pagina %s"
+msgstr "Page %s"
+
+#: ../header.php:41
+msgid "¿qué somos?"
+msgstr "what are we?"
+
+#: ../inc/users.php:31
+msgid "Todos los ajustes"
+msgstr "All settings"
+
+#: ../page-que-somos.php:11
+msgid "Qué somos"
+msgstr "What are we?"
+
+#: ../page-que-somos.php:13 ../page-que-somos.php:15
+#: ../sidebar-que-somos.php:4
+msgid "Sobre Límulus"
+msgstr "About Limulus"
+
+#: ../page-que-somos.php:75 ../page-que-somos.php:77
+#: ../sidebar-que-somos.php:5
+msgid "Quiénes somos"
+msgstr "About us"
+
+#: ../page-que-somos.php:155 ../page-que-somos.php:157
+msgid "Nuestros Aliados"
+msgstr "Our Partners"
+
+#: ../page-que-somos.php:192 ../page-que-somos.php:194
+#: ../sidebar-que-somos.php:7
+msgid "Contáctanos"
+msgstr "Contact us"
+
+#: ../search.php:31
+#, fuzzy, php-format
+msgid "%d Resultado para "
+msgid_plural "%d Resultados para "
+msgstr[0] "%d Result for"
+msgstr[1] "%d Results for"
+
+#: ../sidebar-que-somos.php:6
+msgid "Nuestros aliados"
+msgstr "Our Partners"
+
+#: ../sidebar.php:3
+msgid "etiquetas"
+msgstr "tags"
+
+#: ../sidebar.php:39
+msgid "limpiar"
+msgstr "clean"
+
+#: ../single.php:79
+msgid "Artículos relacionados"
+msgstr "Related articles: "
+
+#: ../single.php:81
+msgid "Más artículos en: "
+msgstr "Related articles: "

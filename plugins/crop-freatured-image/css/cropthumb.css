@@ -1,0 +1,7 @@
+@charset 'utf-8';
+
+#fondo-crop-image{position: fixed; overflow: scroll; width: 100%; height: 100%; top: 0; left: 0; text-align: center; background: url(../img/fondo.png); z-index: 100;}
+#cont-crop-image{width: auto; height: auto; margin-top: 36px; margin-bottom: 36px; display: inline-block; background-color: #fff; border: 11px solid #e9e9e9; border-radius: 13px; opacity: 1; z-index: 100;}
+#cont-bt-crop{width: 97%; height: auto; border: 1px solid #D8D5D5;border-radius: 5px;padding: 13px 5px; text-align: center;}
+#cont-bt-crop select{display: block;float: left;width: 195px;}
+#cont-bt-crop p{display: block; margin: 0 0 10px 0; font-weight: bold; color: #464646; font-size: 14px;}
