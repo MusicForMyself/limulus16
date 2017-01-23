@@ -176,7 +176,7 @@
 			//Main query home: 30 posts and exclude featured
 			$featured = getfeaturedPost();
 
-			$query->set( 'posts_per_page', -1 );
+			$query->set( 'posts_per_page', 30 );
 			$query->set( 'orderby', 'rand' );
 			$query->set( 'post_type', 'post');
 			

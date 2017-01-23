@@ -2,9 +2,7 @@
 	<!-- Insert content here -->
 
 		
-
 		<section class="feed_container post_feed_home clearfix">
-
 
 			<?php 
 				$count = 0; 

@@ -46,6 +46,14 @@ class Featured_Content {
 	public static $post_types = array( 'post' );
 
 	/**
+	 * The tag that is used to mark featured content. Users can define
+	 * a custom tag name that will be stored in this variable.
+	 *
+	 * @see Featured_Content::hide_featured_term
+	 */
+	public static $tag;
+
+	/**
 	 * Instantiate.
 	 *
 	 * All custom functionality will be hooked into the "init" action.
@@ -133,6 +141,11 @@ class Featured_Content {
 	 */
 	public static function wp_loaded() {
 		if ( self::get_setting( 'hide-tag' ) ) {
+			$settings = self::get_setting();
+
+			// This is done before setting filters for get_terms in order to avoid an infinite filter loop
+			self::$tag = get_term_by( 'name', $settings['tag-name'], 'post_tag' );
+
 			add_filter( 'get_terms',     array( __CLASS__, 'hide_featured_term'     ), 10, 3 );
 			add_filter( 'get_the_terms', array( __CLASS__, 'hide_the_featured_term' ), 10, 3 );
 		}
@@ -181,7 +194,19 @@ class Featured_Content {
 		// Return array of cached results if they exist.
 		$featured_ids = get_transient( 'featured_content_ids' );
 		if ( ! empty( $featured_ids ) ) {
-			return array_map( 'absint', apply_filters( 'featured_content_post_ids', (array) $featured_ids ) );
+			return array_map(
+				'absint',
+				/**
+				 * Filter the list of Featured Posts IDs.
+				 *
+				 * @module theme-tools
+				 *
+				 * @since 2.7.0
+				 *
+				 * @param array $featured_ids Array of post IDs.
+				 */
+				apply_filters( 'featured_content_post_ids', (array) $featured_ids )
+			);
 		}
 
 		$settings = self::get_setting();
@@ -194,6 +219,7 @@ class Featured_Content {
 		if ( $term ) {
 			$tag = $term->term_id;
 		} else {
+			/** This action is documented in modules/theme-tools/featured-content.php */
 			return apply_filters( 'featured_content_post_ids', array() );
 		}
 
@@ -214,8 +240,10 @@ class Featured_Content {
 		) );
 
 		// Return empty array if no featured content exists.
-		if ( ! $featured )
+		if ( ! $featured ) {
+			/** This action is documented in modules/theme-tools/featured-content.php */
 			return apply_filters( 'featured_content_post_ids', array() );
+		}
 
 		// Ensure correct format before save/return.
 		$featured_ids = wp_list_pluck( (array) $featured, 'ID' );
@@ -223,6 +251,7 @@ class Featured_Content {
 
 		set_transient( 'featured_content_ids', $featured_ids );
 
+		/** This action is documented in modules/theme-tools/featured-content.php */
 		return apply_filters( 'featured_content_post_ids', $featured_ids );
 	}
 
@@ -346,11 +375,16 @@ class Featured_Content {
 		}
 
 		$settings = self::get_setting();
-		$tag = get_term_by( 'name', $settings['tag-name'], 'post_tag' );
 
-		if ( false !== $tag ) {
+		if ( false !== self::$tag ) {
 			foreach ( $terms as $order => $term ) {
-				if ( is_object( $term ) && ( $settings['tag-id'] === $term->term_id || $settings['tag-name'] === $term->name ) ) {
+				if (
+					is_object( $term )
+					&& (
+						$settings['tag-id'] === $term->term_id
+						|| $settings['tag-name'] === $term->name
+					)
+				) {
 					unset( $terms[ $order ] );
 				}
 			}
@@ -413,7 +447,7 @@ class Featured_Content {
 	 */
 	public static function register_setting() {
 		add_settings_field( 'featured-content', __( 'Featured Content', 'jetpack' ), array( __class__, 'render_form' ), 'reading' );
-		
+
 		// Register sanitization callback for the Customizer.
 		register_setting( 'featured-content', 'featured-content', array( __class__, 'validate_settings' ) );
 	}
@@ -504,6 +538,22 @@ class Featured_Content {
 	public static function get_setting( $key = 'all' ) {
 		$saved = (array) get_option( 'featured-content' );
 
+		/**
+		 * Filter Featured Content's default settings.
+		 *
+		 * @module theme-tools
+		 *
+		 * @since 2.7.0
+		 *
+		 * @param array $args {
+		 * Array of Featured Content Settings
+		 *
+		 * 	@type int hide-tag Default is 1.
+		 * 	@type int tag-id Default is 0.
+		 * 	@type string tag-name Default is empty.
+		 * 	@type int show-all Default is 0.
+		 * }
+		 */
 		$defaults = apply_filters( 'featured_content_default_settings', array(
 			'hide-tag' => 1,
 			'tag-id'   => 0,
