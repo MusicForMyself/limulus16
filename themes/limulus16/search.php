@@ -1,9 +1,5 @@
 	<?php 
-		get_header(); 
-
-		get_sidebar();
-	?>
-	<!-- Insert content here -->
+		get_header(); ?>
 		
 		<section class="feed_container clearfix">
 

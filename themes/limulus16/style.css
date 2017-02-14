@@ -198,7 +198,7 @@ a:hover, a:active, a:focus {
 
 /*Header*/
 .container > header{width: 100%; height: auto;background-size: contain; background-repeat: no-repeat; background-position-y: 100%;margin-bottom: 80px;}
-body.home .container > header{width: 100%; height: auto;background-size: contain; background-repeat: no-repeat; background-position-y: 100%;margin-bottom: 0px;}
+body.home .container > header{width: 100%; height: auto; margin: 1rem auto;}
 h1.logo{ text-indent: -999px; margin: 20px 0 0 1rem; width: 40%; height: 14rem; background-repeat: no-repeat; background-size: contain; float: left; background-position-y: 100%; overflow: hidden; background-image: url('images/logo_web.png'); }
 body.home h1.logo{text-indent: -999px; margin: 0; width: 40%; max-width: 500px; height: 14rem; background-repeat: no-repeat; background-size: contain; float: left; background-position-y: 100%; overflow: hidden; background-image: url(images/logo_web_gris.png) }
 
@@ -229,7 +229,7 @@ body.home .search_btn{ background: url(images/search_gris.png) no-repeat center 
 .social_bar li.lang{ list-style: none; background-image: none; background-repeat: no-repeat; margin: 0 0.7rem; height: 20px; width: 30px;}
 .social_bar li a{width: 100%; height: 100%; display: block;}
 body.home .social_bar{ float:right; margin: 0 0.1rem 0 0;}
-body.home .social_bar li{ width: 30px; list-style: none; background-image: url(images/social_sprite.png); background-repeat: no-repeat; margin: 0 0.7rem; text-align: center; margin-bottom: 5px; height: 30px; }
+body.home .social_bar li{ width: 30px; list-style: none; background-image: url(images/social_sprite.png); background-repeat: no-repeat; margin: 0; text-align: center; margin-bottom: 5px; height: 30px; }
 body.home .social_bar li.lang{ list-style: none; background-image: none; background-repeat: no-repeat; margin: 0 0.7rem; height: 20px; width: 30px;}
 body.home .social_bar li.lang a{ color:#4d4d4d;}
 .social_bar .twitter{background-position: 1px 0;}
@@ -301,12 +301,17 @@ body.home .social_bar .instagram{background-position: -117px -27px;}
 
 	.each_post{width: 23.7%; color: #979797; cursor: pointer; display: inline-block; vertical-align: top; font-family: 'HelveticaLTSTD-LightC';margin-right: 1%; position: relative; margin-bottom: 1%;}
 	.each_post a{text-decoration: none; color: inherit;}
-	.each_post:hover h3{display: block;}
-	.each_post:hover img{opacity: .6}
-	.each_post img{width: 100%; height: auto;}
-	.each_post h3{display: none; font-family: 'Raleway-ExtraBold'; font-size: 22px;text-transform: uppercase;text-align: left;color: #fff; position: absolute; top: 5%; left: 5%; padding:5px;width: 50%;}
-	.each_post h3 span{font-family: 'Merriweather'; margin: 0; text-transform: none; display: block; clear: both; font-weight: bold; font-size: 16px; line-height: 25px;}
+	.each_post:hover img{opacity: .6; -webkit-filter: blur(2px);}
+	.each_post img{display:block; width: 100%; height: auto;}
+	.each_post h3 span{font-family: 'Merriweather'; margin: 0 0 0 -1rem; text-transform: none; display: table; clear: both; font-weight: bold; font-size: 16px; line-height: 25px; background-color: #000; padding: 4px 10px;}
 	.each_post p{font-size: 1.5rem;}
+	.each_post .info_post {position: absolute; display: none; top: 10%; left: 1.5rem; max-width: calc(100% - 4rem);}
+	.each_post:hover .info_post{display: block;}
+	.each_post .post_content{ line-height: 1.3;  padding: 2px 0; width: 400px; margin: 20px auto;}
+	.each_post .post_content h3{ display: inline; position: relative; text-align: left; text-transform: uppercase; font-size: 22px; padding: 5px; box-shadow: 10px 0 0 #000, -10px 0 0 #000;
+    font-family: 'Raleway-ExtraBold'; background-color: #000; padding: 4px 0; color: #fff;  margin: 0; }
+	.each_post .post_content strong { position: relative; }
+
 	.no_post_error{ font-family: 'HelveticaLTSTD-BoldC'; font-size: 5rem; color: #000; text-transform: uppercase; text-align: left; margin-top: 7rem;}
 	.linkhome{font-family: 'HelveticaLTSTD-LightC'; font-size: 1.8rem; text-align: left; display: block; text-decoration: none; color: #000;;}
 
