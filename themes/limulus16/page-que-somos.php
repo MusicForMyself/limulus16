@@ -5,9 +5,9 @@
 
 		<section class="feed_container clearfix">
 
-			<article class="single_post que_somos mobile_accordion">
+			<article class="single_post que_somos ">
 
-				<h1><?php _e('Qué somos', 'limulus'); ?></h1>
+				<h1><?php _e('¿Qué somos?', 'limulus'); ?></h1>
 					
 				
 				<section id="sobre_limulus" class="clearfix">
@@ -42,21 +42,7 @@
 						<div class="clearfix"></div>
 					</section><!-- gallery -->
 
-					<section id="cycle_gallery" class="gallery solo_480">
-						<ul class="cycle-container clearfix">
-					<?php
-						if ($attachments) {
-						    foreach ($attachments as $attachment) {
-
-						    	$link_full_array = wp_get_attachment_image_src($attachment->ID, 'large');
-						    	$link_full       = $link_full_array[0];
-						        echo "<li><img src='".$link_full."'></li>";
-						    }
-						}
-					?>
-						</ul>
-					</section><!-- gallery -->
-
+					
 					<article>
 
 						<?php

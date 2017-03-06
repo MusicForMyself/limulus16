@@ -1,70 +1,54 @@
-	<?php 
-		get_header(); ?>
+<?php  get_header(); ?>
 		
-		<section class="feed_container clearfix">
+	<section class="feed_container clearfix">
 
-			<header class="feed_header clearfix no_480">
+		<article class="search_page">
+			<?php
+				global $wp_query;
+				$total_results = $wp_query->found_posts;
+				$query_string  = $wp_query->query_vars['s']; ?>
 
-				<div class="filters clearfix">
+			<section class="search_container clearfix">
 				
-					<form id="level_1_filter" >
+			<?php 
+				if ( have_posts() ) : ?>
+					<h1><?php printf( _n( "%d Resultado para ", "%d Resultados para ", $total_results, 'limulus' ), $total_results ); ?><i>"<?php echo $query_string; ?>"</i></h1>
+				<?php 
+					while ( have_posts() ) : 
+						the_post(); ?>
+			
+						<article class="each_post search_result">
+							<a rel="nofollow" href="<?php the_permalink(); ?>">
+								<?php 
+								if( has_post_thumbnail() ) {
+									echo get_the_post_thumbnail( $post->ID, 'medium_lim' );
+								}else{
+
+								 	echo "<img src='".THEMEPATH."/images/no_image.png' /> "; 
+								} ?>
+							</a>
+							<section class="info_post">
+								<div class="post_content">
+									<a href="<?php the_permalink(); ?>">
+										<h3><strong><?php the_title(); ?></strong></h3>
+									</a>
+								</div>
+							</section>
+							
+						</article>
+
+			<?php 
+					endwhile;
+				else: ?>
+				<h1 class="no_results">Tu búsqueda </br> no obtuvo </br>ningún </br>resultado</h1>
+				<a class="go_home" href="<?php echo site_url(); ?>">ir al inicio</a>
+			<?php
+				endif; ?>
+
+			</section>
 						
-						<?php get_categories_box( NULL, 'colección', 'chosen-select' ); ?>
+		</article>
 
-					</form><!-- level_1_filter -->
-
-				</div><!-- filters -->
-
-			</header>
-
-			<article class="search_page">
-				<?php
-					global $wp_query;
-					$total_results = $wp_query->found_posts;
-					$query_string  = $wp_query->query_vars['s'];
-				
-				?>
-				<h1><?php printf( _n( "%d Resultado para ", "%d Resultados para ", $total_results, 'limulus' ), $total_results ); ?><i><?php echo $query_string; ?></i></h1>
-				<hr class="divider">
-
-				<section class="search_container clearfix">
-					
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-					<article class="each_serarch_result clearfix">
-						<a href="<?php the_permalink(); ?>">
-						<?php 
-						if( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						}else{
-
-						 	echo "<img src='".THEMEPATH."/images/no_image.png' /> "; 
-						} 
-						?>
-						<div class="info_container">
-
-							<h3><?php the_title(); ?></h3>
-							<div class="excerpt no_480">
-								<?php the_excerpt(); ?>
-							</div>
-						</div><!-- info_container -->
-						</a>
-					</article><!-- each_serarch_result -->
-
-					<?php endwhile; endif; ?>
-
-				</section>
-				
-				<hr class="divider">
-				
-				<form id="secondary_searchbox" class="searchform_results clearfix" method="get" action="<?php echo qtrans_convertURL( site_url('/') ); ?>">
-					<input type="search" id="searchbox2" value="" name="s" id="s" >
-					<input type="hidden" value="<?php echo qtrans_getLanguage(); ?>" name="lang" id="lang" >
-					<input type="submit" id="submit_search2" value="">
-				</form>
-				
-			</article><!-- each_post -->
+	</section>
 	
-		</section><!-- feed_container -->
-	
-	<?php get_footer(); ?>
+<?php get_footer(); ?>

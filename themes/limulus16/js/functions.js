@@ -184,23 +184,23 @@
 			});
 
 			//Fija el menú lateral de las páginas
-			var z = ($('#pages_sidebar').length > 1) ? $('#pages_sidebar').offset().top : $('#main_sidebar').offset().top;
-			$(window).scroll( function( e ){
-				if( $(window).width() <= 768 ) return;
-				var y = $(this).scrollTop();
-				if ( y >= z && !$('#pages_sidebar').hasClass('fixed_filters') ) {
-					$('#pages_sidebar').addClass('fixed_filters');
-					$('.fixed_target').addClass('fixed');
-					// $('#pages_sidebar').css('height' , '-=28' );
-					return;
-				} else if( y < z && $('#pages_sidebar').hasClass('fixed_filters') ){
-					$('#pages_sidebar').removeClass('fixed_filters');
-					$('.fixed_target').removeClass('fixed');
-					// $('#pages_sidebar').css('height' , '+=28' );
-				}
+			// var z = ($('#pages_sidebar').length > 1) ? $('#pages_sidebar').offset().top : $('#main_sidebar').offset().top;
+			// $(window).scroll( function( e ){
+			// 	if( $(window).width() <= 768 ) return;
+			// 	var y = $(this).scrollTop();
+			// 	if ( y >= z && !$('#pages_sidebar').hasClass('fixed_filters') ) {
+			// 		$('#pages_sidebar').addClass('fixed_filters');
+			// 		$('.fixed_target').addClass('fixed');
+			// 		// $('#pages_sidebar').css('height' , '-=28' );
+			// 		return;
+			// 	} else if( y < z && $('#pages_sidebar').hasClass('fixed_filters') ){
+			// 		$('#pages_sidebar').removeClass('fixed_filters');
+			// 		$('.fixed_target').removeClass('fixed');
+			// 		// $('#pages_sidebar').css('height' , '+=28' );
+			// 	}
 
 
-			});
+			// });
 
 
 		});
@@ -530,28 +530,28 @@
 		/**
 		 * Accion para cerrar el searchbox si está abierto
 		 */
-		$(document).on('click', function(){
-			( $('#searchform').hasClass('open') ) ? closeSearchBox()  :  '' ;
-		});
+		// $(document).on('click', function(){
+		// 	( $('#searchform').hasClass('open') ) ? closeSearchBox()  :  '' ;
+		// });
 
-			$('#searchform').click(function(e){
-			  e.stopPropagation();
-			});
+		// 	$('#searchform').click(function(e){
+		// 	  e.stopPropagation();
+		// 	});
 
 		/**
 		 * Enviar form de la busqueda
 		 */
-		$('#searchsubmit').on('click', function(e){
-			console.log('lol catz');
-			e.preventDefault();
+		// $('#searchsubmit').on('click', function(e){
 
-			if( ( $(window).width() > 480 && window.orientation == 0   ) || $('#searchform').hasClass('open') ){
+		// 	e.preventDefault();
+
+		// 	if( ( $(window).width() > 480 && window.orientation == 0   ) || $('#searchform').hasClass('open') ){
 				
-				$('#searchform').submit();
-				return;
-			}
-			openSearchBox();
-		});
+		// 		$('#searchform').submit();
+		// 		return;
+		// 	}
+		// 	openSearchBox();
+		// });
 
 		/**
 		 * Botones Next y Prev en el single
@@ -563,6 +563,31 @@
 		if($('.prev_posts').length && $('.next_posts').length){
 			$('.prev_posts').append('<span>|</span>')
 		}
+
+		// Assign this accoding to responsive layout
+		var posts_per_row = 4;
+		var maCounter = 0;
+		var new_container_height = 0;
+
+		$('.each_post.search_result').each(function(){
+			
+			if( !maCounter || (maCounter > (posts_per_row-1)) ){
+				new_container_height = $(this).find('.wp-post-image').height();
+				maCounter = 0;
+			}
+			console.log($(this));
+			console.log(new_container_height);
+			$(this).css('height', new_container_height);
+			maCounter++;
+		});
+
+		$('.each_post img').each(function(){
+			var img_height = $(this).height();
+			var container_height = $(this).closest('.each_post').height();
+			var final_margin = (container_height-img_height) / 2;
+			if(img_height < container_height)
+				$(this).css('margin-top', final_margin);
+		});
 
 	});
 
