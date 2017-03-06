@@ -24,8 +24,7 @@
 
 					<?php the_content(); ?>
 
-				
-					<div class="addthis_custom_sharing"></div>
+					<div class="addthis_inline_share_toolbox"></div>
 
 				<?php
 					if(qtrans_getLanguage() == 'en'){

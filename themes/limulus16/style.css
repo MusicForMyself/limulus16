@@ -336,7 +336,7 @@ body.home .social_bar .instagram{background-position: -117px -27px;}
 .arrow.right{background-position: -18px 0;}
 
 .single_post{text-align:left; padding:0 2rem;}
-.single_post h1{font-family: 'Raleway-Extralight'; font-size: 40px; text-transform: uppercase; letter-spacing: 3px; margin: 1rem auto 100px auto;}
+.single_post h1{font-family: 'Raleway-Extralight'; font-size: 40px; text-transform: uppercase; letter-spacing: 3px; margin: 1rem auto 8rem auto;}
 .single_post h1 span{display: block; clear: both; font-family: 'Merriweather'; letter-spacing: 1px; text-transform: none;font-weight: 300;font-size: 22px;}
 .single_post p{font-family:'HelveticaLTSTD-Light';font-size:1.7rem;line-height:2rem;}
 .divider{ border: 0; height: 1px; background-color: rgb(202,202,202); clear: both; margin: 2rem auto; width: 95%;}
@@ -356,7 +356,7 @@ sup{ font-family:'Merriweather'; font-size:1.2rem; vertical-align: top; line-hei
 .main_content blockquote p{font-style:italic;margin:0;font-family:'Merriweather';font-weight:300;}
 .main_content ul li{font-family:'HelveticaLTSTD-Light'; font-size:1.8rem;}
 .main_content h4{ font-family: 'Raleway'; font-size: 22px; text-transform: uppercase; margin-bottom: 2rem;;}
-.main_content .wp-caption-text{margin:-1rem 0 2rem 0; font-family: 'Raleway-Regular'; font-size: 12px; color: #000; line-height: 1.8rem;width:30%;}
+.main_content .wp-caption-text{ margin:-1rem 0 2rem 0; font-family: 'Raleway-Regular'; font-size: 12px; color: #000; line-height: 1.8rem; width:70%;}
 .main_content .wp-caption {width: 100%!important;}
 .footnote{width:100%;border-style:solid;border-width:0px 0 0px 0;border-color:#606060;margin:4rem 0 0 0;padding:0rem 0rem;background:#fff!important;}
 .footnote p{font-family:'Merriweather'; font-size: 1.2rem; color: #000;line-height:2rem;margin-bottom:5px;font-weight:300;}
