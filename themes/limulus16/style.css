@@ -300,7 +300,8 @@ body.home .social_bar .instagram{background-position: -117px -27px;}
 	.each_post:nth-of-type(4):hover img, 
 	.each_post:nth-of-type(5):hover img {opacity: .6}
 
-	.each_post{width: 23.7%; color: #979797; cursor: pointer; display: inline-block; vertical-align: top; font-family: 'HelveticaLTSTD-LightC';margin-right: 1%; position: relative; margin-bottom: 1%;}
+	.each_post{width: 23.7%; min-height: 180px!important; color: #979797; cursor: pointer; display: inline-block; vertical-align: top; font-family: 'HelveticaLTSTD-LightC'; position: relative; margin-right: 1%; margin-bottom: 1%; overflow: hidden; background-color: #1f1f1f;}
+	.each_post:nth-of-type(4n+5){ margin-right: 0!important;}
 	.each_post.search_result{width: 23.7%!important; min-height: 180px; overflow: hidden; margin: 0 1% 1% 0!important;}
 	.each_post.search_result:nth-of-type(4n){ margin: 0 0 1% 0!important;}
 	.each_post a{text-decoration: none; color: inherit;}
@@ -394,7 +395,6 @@ sup{ font-family:'Merriweather'; font-size:1.2rem; vertical-align: top; line-hei
 
 /*Search*/
 .search_page h1{font-family: 'Raleway-Extralight', Helvetica, Arial, sans-serif; font-size: 4.6rem; text-transform: uppercase; margin: 4.6rem 0; letter-spacing: 0;}
-.search_page h1 i{}
 .search_container{margin: 4rem 0 0 0;}
 .each_serarch_result{margin: 0 0 4rem 0;}
 .each_serarch_result img{ width: 140px; height: auto; clear: left; display: inline-block; }

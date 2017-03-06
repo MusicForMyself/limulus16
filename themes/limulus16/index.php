@@ -9,7 +9,7 @@
 					the_post(); 
 					$count ++; ?>
 				
-					<article class="each_post">
+					<article class="each_post home">
 						<a rel="nofollow" href="<?php the_permalink(); ?>">
 							<?php
 								if($count > 5){

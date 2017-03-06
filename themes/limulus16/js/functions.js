@@ -566,27 +566,41 @@
 
 		// Assign this accoding to responsive layout
 		var posts_per_row = 4;
+		var home_skip_to_grid = 5;
 		var maCounter = 0;
 		var new_container_height = 0;
 
-		$('.each_post.search_result').each(function(){
+		/*** General screen fixes ***/
+		$('.feed_container').imagesLoaded(function(){
 			
-			if( !maCounter || (maCounter > (posts_per_row-1)) ){
-				new_container_height = $(this).find('.wp-post-image').height();
-				maCounter = 0;
-			}
-			console.log($(this));
-			console.log(new_container_height);
-			$(this).css('height', new_container_height);
-			maCounter++;
-		});
+			/*** Search screen fixes ***/
+			$('.each_post.search_result').each(function(){
+				
+				if( !maCounter || (maCounter > (posts_per_row-1)) ){
+					new_container_height = $(this).find('.wp-post-image').height();
+					maCounter = 0;
+				}
+				$(this).css('height', new_container_height);
+				maCounter++;
+			});
 
-		$('.each_post img').each(function(){
-			var img_height = $(this).height();
-			var container_height = $(this).closest('.each_post').height();
-			var final_margin = (container_height-img_height) / 2;
-			if(img_height < container_height)
-				$(this).css('margin-top', final_margin);
+			/*** Home screen fixes ***/
+			$('.each_post.home').each(function(){
+				
+				if(!maCounter )
+					new_container_height = $(this).find('.wp-post-image').height();
+				$(this).css('height', new_container_height);
+				maCounter++;
+				maCounter = ( $(this).css('margin-right') == '0px' ) ? 0 : maCounter;
+			});
+
+			$('.each_post img').each(function(){
+				var img_height = $(this).height();
+				var container_height = $(this).closest('.each_post').height();
+				var final_margin = (container_height-img_height) / 2;
+				if(img_height && img_height < container_height)
+					$(this).css('margin-top', final_margin);
+			});
 		});
 
 	});
