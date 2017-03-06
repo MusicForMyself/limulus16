@@ -75,6 +75,10 @@
 
 
 		// FitVids
+		$("iframe").each(function(){
+			$(this).unwrap(".main_content");
+		});
+		
 		$(".main_content").fitVids();
 
 		$('.cycle-container').cycle({
