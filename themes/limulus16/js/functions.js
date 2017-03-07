@@ -576,11 +576,12 @@
 
 		/*** General screen fixes ***/
 		$('.feed_container').imagesLoaded(function(){
+			new_container_height = $('.each_post').first().find('.wp-post-image').height();
 			
 			/*** Search screen fixes ***/
 			$('.each_post.search_result').each(function(){
-				
 				if( !maCounter || (maCounter > (posts_per_row-1)) ){
+					console.log(maCounter);
 					new_container_height = $(this).find('.wp-post-image').height();
 					maCounter = 0;
 				}
