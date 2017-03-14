@@ -9,8 +9,8 @@
 					the_post(); 
 					$count ++; ?>
 				
-					<article class="each_post">
-						<a href="<?php the_permalink(); ?>">
+					<article class="each_post home">
+						<a rel="nofollow" href="<?php the_permalink(); ?>">
 							<?php
 								if($count > 5){
 									the_post_thumbnail('medium_lim', array( )); 
@@ -18,8 +18,15 @@
 									the_post_thumbnail('big_lim', array( )); 
 								}
 							?>
-							<h3><?php the_title(); ?></h3>
 						</a>
+						<section class="info_post">
+							<div class="post_content">
+								<a href="<?php the_permalink(); ?>">
+									<h3><strong><?php the_title(); ?></strong></h3>
+								</a>
+							</div>
+						</section>
+						
 					</article>
 
 			<?php 
