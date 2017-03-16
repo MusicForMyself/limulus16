@@ -65,7 +65,7 @@
 						<a rel="nofollow" href="<?php echo get_permalink( $related->ID ); ?>">
 							<?php 
 							if( has_post_thumbnail($related) ) {
-								echo get_the_post_thumbnail( $related->ID, 'thumbnail' );
+								echo get_the_post_thumbnail( $related->ID, 'medium_lim' );
 							}else{
 
 							 	echo "<img src='".THEMEPATH."/images/no_image.png' /> "; 

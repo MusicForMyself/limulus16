@@ -1,13 +1,8 @@
 <?php 
 	get_header(); 
+	the_post(); ?>
 
-	get_sidebar('info');
 
-	the_post();
-?>
-
-<!-- Insert content here -->
-	
 	<section class="feed_container clearfix">
 
 

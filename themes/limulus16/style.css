@@ -302,7 +302,7 @@ body.home .social_bar .instagram{background-position: -117px -27px;}
 
 	.each_post{width: 23.7%; min-height: 180px!important; color: #979797; cursor: pointer; display: inline-block; vertical-align: top; font-family: 'HelveticaLTSTD-LightC'; position: relative; margin-right: 1%; margin-bottom: 1%; overflow: hidden; background-color: #1f1f1f;}
 	.each_post:nth-of-type(4n+5){ margin-right: 0!important;}
-	.each_post.search_result{width: 23.7%!important; min-height: 180px; overflow: hidden; margin: 0 1% 1% 0!important;}
+	.each_post.search_result{width: 23.7%!important; min-height: 180px; overflow: hidden; margin: 0 1% 1% 0!important; max-width: 220px;}
 	.each_post.search_result:nth-of-type(4n){ margin: 0 0 1% 0!important;}
 	.each_post a{text-decoration: none; color: inherit;}
 	.each_post:hover img{opacity: .6; -webkit-filter: blur(2px);}
@@ -329,22 +329,22 @@ body.home .social_bar .instagram{background-position: -117px -27px;}
 /*Single*/
 
 .tags_single {margin-bottom: 10px;}
-.tags_single a{color: #B3B3B3; font-family: 'Raleway-Regular'; font-size: 12px; margin-right: 20px;}
+.tags_single a{color: #B3B3B3; font-family: 'Raleway-Regular'; font-size: 12px; margin-right: 20px; letter-spacing: 0.6px;}
 .arrow{display: block; width: 17px; height: 25px; background: url('images/arrow_sprite.png') no-repeat; margin: 1.3rem;}
 .arrow.disabled{opacity: 0.2; pointer-events: none;}
 .arrow.left{background-position: 0 0;}
 .arrow.right{background-position: -18px 0;}
 
 .single_post{text-align:left; padding:0 2rem;}
-.single_post h1{font-family: 'Raleway-Extralight'; font-size: 40px; text-transform: uppercase; letter-spacing: 3px; margin: 1rem auto 8rem auto;}
-.single_post h1 span{display: block; clear: both; font-family: 'Merriweather'; letter-spacing: 1px; text-transform: none;font-weight: 300;font-size: 22px;}
+.single_post h1{font-family: 'Raleway-Extralight'; font-size: 40px; text-transform: uppercase; letter-spacing: 4px; margin: 1rem auto 8rem auto;}
+.single_post h1 span{display: block; clear: both; font-family: 'Merriweather'; letter-spacing: 1px; text-transform: none;font-weight: 300;font-size: 22px; margin-top: 1rem;}
 .single_post p{font-family:'HelveticaLTSTD-Light';font-size:1.7rem;line-height:2rem;}
 .divider{ border: 0; height: 1px; background-color: rgb(202,202,202); clear: both; margin: 2rem auto; width: 95%;}
 .full_width{width: 102.5%;}
 .main_content img{clear:both; width: 100%; height: auto; margin: 2rem auto;}
 .main_content p{font-family: 'Merriweather'; font-size: 18px; margin: 0 0 25px 0; line-height: 35px;width: 70%;font-weight: 300;;}
 .main_content a{color: #000;}
-.main_content{margin-bottom: 4rem}
+.main_content{margin-bottom: 12rem}
 
 .mas_posts{margin-bottom: 7rem;}
 .mas_posts h4{font-family: 'Raleway-Medium'; font-size: 22px; text-transform: uppercase;margin-bottom: 50px;font-weight: 400;}
@@ -385,7 +385,7 @@ sup{ font-family:'Merriweather'; font-size:1.2rem; vertical-align: top; line-hei
 #nuestros_aliados .contact.long img{width: 100%; height: auto;}
 .email_contacto{text-decoration: none; color: #000; font-family: 'HelveticaLTSTD-BlkC'; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 2rem; display: block;}
 #quienes_somos .contact a {text-decoration: none; color:#000;}
-
+.head_image img{display: block; width: 100%; height: auto; max-width: 900px;}
 
 .socios img {float: left; width: 100%; margin-bottom: 30px;}
 .socio {width:50%;float:left;}
@@ -393,8 +393,10 @@ sup{ font-family:'Merriweather'; font-size:1.2rem; vertical-align: top; line-hei
 .socio span a {color: #b3b3b3; font-family: 'Raleway-Regular'; font-size: 12px;}
 .socio h4 {font-family: 'Merriweather'; font-weight: 300; font-size: 18px; margin-bottom: 20px;}
 
+.mailto{font-family: 'Merrieweather', Times, serif; font-size: 1.8rem; letter-spacing: 1px; color: #000; text-decoration: none;}
+
 /*Search*/
-.search_page h1{font-family: 'Raleway-Extralight', Helvetica, Arial, sans-serif; font-size: 4.6rem; text-transform: uppercase; margin: 4.6rem 0; letter-spacing: 0;}
+.search_page h1{font-family: 'Raleway-Extralight', Helvetica, Arial, sans-serif; font-size: 4.4rem; text-transform: uppercase; margin: 0 0 8rem 0; letter-spacing: 0.5px;}
 .search_container{margin: 4rem 0 0 0;}
 .each_serarch_result{margin: 0 0 4rem 0;}
 .each_serarch_result img{ width: 140px; height: auto; clear: left; display: inline-block; }

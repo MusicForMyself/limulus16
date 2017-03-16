@@ -2,7 +2,7 @@
 		</div><!-- container -->
 
 	<footer class="main_footer clearfix">
-		<a href="<?php echo site_url(); ?>/info/info-derechos-autor/">información sobre derechos de autor</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:hola@limulus.com">hola@limulus.com</a>
+		<a href="<?php echo site_url(); ?>/info/info-derechos-autor/">información sobre derechos de autor</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:hola@limulus.mx">hola@limulus.mx</a>
 	</footer>
 		<?php wp_footer(); ?>
 		<!-- ANALYTICS -->
