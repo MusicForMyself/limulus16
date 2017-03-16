@@ -1,6 +1,6 @@
 	<?php get_header(); ?>
 		
-		<section class="feed_container post_feed_home clearfix">
+		<section id="feedContainer" class="feed_container post_feed_home clearfix">
 
 			<?php 
 				$count = 0; 
@@ -31,7 +31,9 @@
 
 			<?php 
 				endwhile; endif; ?>
-			
+				<nav id="nav-below" class="hidden">
+					<?php previous_posts_link(); ?><?php next_posts_link(); ?>
+				</nav>
 			<div class="clearfix"></div>
 
 		</section><!-- feed_container -->

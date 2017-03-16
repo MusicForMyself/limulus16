@@ -176,9 +176,10 @@
 			//Main query home: 30 posts and exclude featured
 			$featured = getfeaturedPost();
 
-			$query->set( 'posts_per_page', 30 );
+			$query->set( 'posts_per_page', 33 );
 			$query->set( 'orderby', 'rand' );
 			$query->set( 'post_type', 'post');
+			$query->set( 'paged', TRUE);
 			
 		}
 
@@ -254,7 +255,7 @@
 
 		// Add a page number if necessary
 		if ( $paged >= 2 || $page >= 2 ){
-			echo ' | ' . sprintf( __( 'Pagina %s' ), max( $paged, $page ) );
+			// echo ' | ' . sprintf( __( 'Pagina %s' ), max( $paged, $page ) );
 		}
 	}
 

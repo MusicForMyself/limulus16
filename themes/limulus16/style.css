@@ -150,7 +150,7 @@ src: url('fonts/helveticaltstd-blkcond.eot?#iefix') format('embedded-opentype'),
 
 .first{ margin-left: 0; padding-left: 0;}
 .last{ margin-right: 0; padding-right: 0;}
-
+.hidden{display: none;}
 .left{ float: left;}
 .right{ float: right;}
 
@@ -442,6 +442,9 @@ body.home .main_footer{position: fixed; bottom:0px; }
 .banner_fonca a img {
 	width: 90%;
 } 
+
+#infscr-loading{display: block; width: 100%; text-align: center;}
+#infscr-loading img{width: 48px; height: auto;}
 
 /*RESPONSIVE*/
 
