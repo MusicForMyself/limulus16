@@ -574,6 +574,11 @@
 		var maCounter = 0;
 		var new_container_height = 0;
 
+		if($(window).width() <= 1024){
+			maCounter = 0;
+			new_container_height = 0;
+		}
+
 		/*** General screen fixes ***/
 		var initializeContainer = function(){
 				console.log("Init container");

@@ -8,6 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="cleartype" content="on">
 		<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4dd43084644b4d2b"></script> -->
 		<?php wp_head(); ?>
@@ -20,7 +22,7 @@
 		<div class="container clearfix">
 
 			<header class="clearfix">
-
+				<a class="menu_handle_mobile" id="menu_handle_mobile"><i class="material-icons">menu</i></a>
 				<a href="<?php echo qtrans_convertURL(site_url()); ?>"><h1 class="logo">Límulus</h1></a>
 				<nav class="header_menu">
 					
@@ -52,5 +54,29 @@
 					</div><!-- renglon -->
 
 				</nav><!-- header_menu -->
+
+				<nav class="mobile_header" id="mobileHeader">
+					
+					<nav class="mobilenav" id="mobileMenu">
+						<ul>
+							<li><a href="<?php echo site_url('que-somos'); ?>">¿Qué somos?</a></li>
+							<li class="lang"><?php get_qtrans_single('lang_change'); ?></li>
+						</ul>
+						<ul class="social_bar no_480">
+							
+							<li class="twitter">
+								<a href="https://twitter.com/limulus_mx" target="_blank"></a>
+							</li>
+							<li class="facebook">
+								<a href="http://www.facebook.com/revistalimulus" target="_blank"></a>
+							</li>
+							<li class="instagram">
+								<a href="http://instagram.com/limulusmx" target="_blank"></a>
+							</li>
+						</ul><!-- social_bar -->
+
+					</nav>
+
+				</nav><!-- mobile_header -->
 
 			</header><!-- main header -->
